@@ -15,6 +15,9 @@
             <h5>2.DNS dùng để làm gì</h5>
             <p>DNS dùng để lưu trữ các tên miền (domain name, ví dụ www.google.com), cung cấp dịch vụ chuyển đổi từ địa chỉ dạng chuỗi (tên miền) sang địa chỉ dạng số (IP) và ngược lại (ví dụ www.google.com <> 216.58.221.228)</p>
             <h5>3. Hãy truy cập 3 trang web mà không cần dùng tới tên miền (domain name)?</h5>
+            <b>Ưu điểm</b>
+            <p>Chi phí thấp</p>
+            <b>Nhược điểm</b>
             <div class="row">
                 <div class="col-sm">
                     <img  src="./img/ping_1.PNG" alt="">
@@ -30,6 +33,46 @@
             <p>Tên miền cấp 1 cũng là tên miền quốc tế, được dùng chung cho nhiều quốc gia, mỗi tên miền đại diện cho một lĩnh vực, một ngành nghề, hay một khu vực địa lý. Ví dụ: .com, .net, .org, .mil, .edu, .gov, .asia, .eu</p>
             <p>Tên miền cấp 2 cũng là tên miền quốc gia, thông thường mỗi quốc gia sẽ có một tên miền riêng, gồm hai kí tự. Ví dụ: .vn (Việt Nam), .cn (Trung Quốc), .uk (Anh), .us (Mỹ).</p>
              <p>Tên miền cấp 3 là tên miền kết hợp giữa tên miền cấp 2 và tên miền cấp 1. Ví dụ: .com.vn, .edu.vn, .edu.uk, .com.us</p>   
+             <h5>5. Tên miền quốc tế là gì? cho 3 ví dụ?</h5>
+             <p> Tên miền quốc tế: do Trung tâm quản lý tên miền quốc tế cấp, ví dụ thường có đuôi là .com, .net, .biz, .info, .org</p>
+<h5>6. Tên miền “nội địa” hay quốc gia là gì? cho 3 ví dụ?</h5>
+
+<p>Tên miền quốc gia (nội địa): do Trung tâm quản lý tên miền của mỗi quốc gia quản lý. Ví dụ tên miền của Việt Nam có đuôi dạng .vn, .com.vn, edu.vn, gov.vn. Các tên miền này do VNNIC quản lý.</p> 
+<h5>7. DNS server addresses trong cạc mạng máy tính dùng để làm gì? Tại sao lại có Preferred DNS server/Alternate DNS server?</h5>
+<p>Để thiết lập địa chỉ của máy phân giải tên miền. Một  cái chính và một cái dự phòng.</p>
+<h5>8. Trong cạc mạng, không điền thông tin trong DNS server, có truy cập được trang web không? chứng minh?</h5>
+<p>– Cạc mạng sẽ tự động chuyển sang chế độ lấy DNS server address tự động</p>
+<p>– Nếu cố tình gán một DNS server address không tồn tại thì không thể truy cập trang web</p>
+<h5>9. “8.8.8.8” là gì?</h5>
+<p>– Là DNS server address của Google</p>
+<h5>10. Sau khi người dùng gõ vào trình duyệt , gõ phím Enter.Viết lại quá trình một trình duyệt lấy trang web về?
+</h5>
+<ol>
+    <li>Trình duyệt tra cứu địa chỉ IP cho tên miền https://www.w3schools.com/ qua DNS </li>
+    <li>Gửi một gói tin yêu cầu nội dung trang web (index.html) tới Web server</li>
+    <li>Web server gửi nội dung trang web về cho máy client</li>
+    <li>Máy client thông dịch (biên dịch) mã nguồn của trang web (HTML, CSS, JavaScript) rồi hiển thị lên trình duyệt</li>
+</ol>
+<h5>11. Thử cấu hình DNS server: sửa tập tin hosts để khi người dùng truy cập trang tuoitre.vn, nội dung trình duyệt sẽ hiển thị thông báo lỗi “không thể truy cập được trang tuoitre.vn”
+</h5>
+
+Ví dụ: 1.1.1.1  tuoitre.vn
+
+– Thông thường trong một địa chỉ IP sẽ được đặt nhiều tên miền trên đó (sẽ tìm hiểu kĩ hơn ở phần thiết lập web server), vì vậy, sẽ thực hiện việc chuyển hướng trang web sau phần tìm hiểu về web server.
+
+Ví dụ một phần trong tập tin hosts:
+
+127.0.0.1 www.ngvteo.com
+127.0.0.1 thuatngucntt.com
+127.0.0.1 localhost
+
+Ví dụ một đoạn mã cấu hình cho một trang web trên Apache:
+
+ <VirtualHost *:80>
+    DocumentRoot "E:\WebRootYersin\NVTeo"
+    ServerName www.ngvteo.com
+
+</VirtualHost>
         </div>
         <a class="text-center" href="../index.html">Trang chủ</a>
     </div>
